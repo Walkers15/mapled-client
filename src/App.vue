@@ -17,7 +17,7 @@
     </div>
     <div v-if="findCharacterData === true">
       <p>{{ nickname }} 님의 다이어리</p>
-      <table style="margin-left: auto; margin-right: auto">
+      <table border="1" style="margin-left: auto; margin-right: auto">
         <th>등록일자</th>
         <th>레벨</th>
         <th>경험치</th>
