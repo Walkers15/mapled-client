@@ -17,7 +17,7 @@
     </div>
     <div v-if="findCharacterData === true">
       <p>{{ nickname }} 님의 다이어리</p>
-      <table border="1" style="margin-left: auto; margin-right: auto">
+      <table style="margin-left: auto; margin-right: auto">
         <th>등록일자</th>
         <th>레벨</th>
         <th>경험치</th>
@@ -28,7 +28,7 @@
         <th>DEX</th>
         <th>LUK</th>
         <th>INT</th>
-        <tr v-for="(characterInfo, index) in characterData" :key="(characterInfo, index)">
+        <tr v-for="characterInfo in characterData" :key="characterInfo">
           <td>{{ characterInfo.createdAt }}</td>
           <td>{{ characterInfo.level }}</td>
           <td>{{ characterInfo.exp.toLocaleString() }}</td>
