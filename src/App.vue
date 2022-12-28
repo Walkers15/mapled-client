@@ -26,8 +26,8 @@
         <th>보스 공격력</th>
         <th>STR</th>
         <th>DEX</th>
-        <th>LUK</th>
         <th>INT</th>
+        <th>LUK</th>
         <tr v-for="characterInfo in characterData" :key="characterInfo">
           <td>{{ characterInfo.createdAt }}</td>
           <td>{{ characterInfo.level }}</td>
@@ -69,7 +69,9 @@ export default {
   methods: {
     async search() {
       try {
-        const result = await axios.get(`http://192.168.0.118:3030/search/${this.nickname}`);
+        const result = await axios.get(
+          `http://127.0.0.1:3030/search/${this.nickname}`
+        );
         if (result.data.isRegister === false) {
           this.searchMessage = result.data.message;
           this.registerButton = true;
@@ -85,7 +87,9 @@ export default {
     },
     async register() {
       try {
-        const result = await axios.post(`http://192.168.0.118:3030/register`, { nickname: this.nickname });
+        const result = await axios.post(`http://127.0.0.1:3030/register`, {
+          nickname: this.nickname,
+        });
         console.log(result.data);
         alert("등록을 완료했습니다!");
         this.showSearchBlock = false;
