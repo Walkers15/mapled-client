@@ -26,8 +26,8 @@
         <th>보스 공격력</th>
         <th>STR</th>
         <th>DEX</th>
-        <th>LUK</th>
         <th>INT</th>
+        <th>LUK</th>
         <tr v-for="characterInfo in characterData" :key="characterInfo">
           <td>{{ characterInfo.createdAt }}</td>
           <td>{{ characterInfo.level }}</td>
